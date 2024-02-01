@@ -1,0 +1,12 @@
+package entity
+
+import(
+	"github.com/gorm.io/gorm"
+	
+)
+type Customers struct {
+	gorm.Model
+	Name string 
+	Age string `valid:"required~Need Age,ISint~Age is not integer"`
+	CustomerID string `valid:"required~Need ID, matches(^[C][M]|[C][U]\\d{8}$)`
+}
